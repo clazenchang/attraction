@@ -9,6 +9,6 @@ import HomeCards from '@/components/HomeCards.vue'
 
   <HomeCards />   <!-- show cards -->
 
-  <DestListings :limit="4" :showButton="true" />
+  <DestListings :limit="6" :showButton="true" />
 
 </template>
