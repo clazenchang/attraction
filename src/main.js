@@ -1,11 +1,14 @@
-import './assets/main.css'
 
+import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import 'primeicons/primeicons.css'
+import Toast from 'vue-toastification'
+import 'vue-toastification/dist/index.css'
 
-const app = createApp(App)
+import router from '@/router'   // don't need 'index.js'
 
-app.use(router)
 
-app.mount('#app')
+// createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router).use(Toast).mount('#app')
