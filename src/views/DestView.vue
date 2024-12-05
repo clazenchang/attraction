@@ -12,17 +12,27 @@ const router = useRouter();
 const toast = useToast();
 
 const deleteDest = async () => {
-  try {
-    const confirm = window.confirm('Are you sure you want to delete this destination?')
-    if(confirm){
-      await axios.delete (`/api/destinations/${route.params.id}`)
-      toast.success('Destination Deleted Successfully')
-      router.push('/destinations')
-    }
-  } catch (error) {
-    console.error('Error deleting destination', error)
-    toast.error('Destination Not Deleted')
-  } finally { }
+  if(route.params.id < 7){
+    alert("The first six entries are used as a website demo and can't deleted. \n" +
+    "(前六筆資料做為網站 Demo 使用，未開放刪除) \n\n"+
+    "Please add your own articles to freely edit and delete. \n " +
+    "(歡迎自行新增文章以自由刪除與編輯) \n\n" +
+    "Thanks! \n" + 
+    "(謝謝!)"
+     )
+  }else{
+    try {
+      const confirm = window.confirm('Are you sure you want to delete this destination?')
+      if(confirm){
+        await axios.delete (`/api/destinations/${route.params.id}`)
+        toast.success('Destination Deleted Successfully')
+        router.push('/destinations')
+      }
+    } catch (error) {
+      console.error('Error deleting destination', error)
+      toast.error('Destination Not Deleted')
+    } finally { }
+  }
 }
 
 const state = reactive({
