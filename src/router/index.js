@@ -1,23 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from '@/views/HomeView.vue'
+import DestsView from "@/views/DestsView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
+import DestView from "@/views/DestView.vue";
+import AddDestView from "@/views/AddDestView.vue";
+import EditDestView from "@/views/EditDestView.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
-  ],
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
+        { path: '/', name: 'home', component: HomeView },
+        { path: '/destinations', name: 'destinations', component: DestsView },
+        { path: '/destinations/:id', name: 'dest', component: DestView },
+        { path: '/destinations/add', name: 'add-dest', component: AddDestView },
+        { path: '/destinations/edit/:id', name: 'edit-dest', component: EditDestView },
+        { path: '/:pathMatch(.*)', name: 'not-found', component: NotFoundView }  // any file or resource we go to that doesn't exist
+    ]
 })
 
-export default router
+export default router;
+

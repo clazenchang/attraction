@@ -1,9 +1,14 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import DestListings from '@/components/DestListings.vue';
+import Hero from '@/components/Hero.vue'
+import HomeCards from '@/components/HomeCards.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <Hero />        <!-- Hero component -->
+
+  <HomeCards />   <!-- show cards -->
+
+  <DestListings :limit="4" :showButton="true" />
+
 </template>
