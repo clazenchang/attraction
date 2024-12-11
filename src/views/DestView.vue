@@ -92,7 +92,7 @@ onMounted(async () => {
           <div class="bg-white p-6 rounded-lg shadow-md">
             <h3 class="text-xl font-bold mb-6">Company Info</h3>
 
-            <h2 class="text-2xl">{{ state.dest.company.name }}</h2>
+            <!-- <h2 class="text-2xl">{{ state.dest.company.name }}</h2> -->
 
             <p class="my-2">
               {{ state.dest.company.description }}
