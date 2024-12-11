@@ -37,8 +37,7 @@ const handleSubmit = async () => {
   try {
     const response = await axios.post('/api/destinations/', newDest)   // use proxy
     toast.success('Destination Add Successfully')
-    console.log(response.company.name)
-    // router.push(`/destinations/${response.data.id}`)
+    router.push(`/destinations/${response.data.id}`)
   }catch(error){
     console.error("Error", error)
     toast.error('Destination Was Not Added')
